@@ -1,0 +1,14 @@
+{
+  "name": "ui-inhwna",
+  "description": "JavaScript 프로그래밍 언어 학습",
+  "version": "0.0.1",
+  "private": true,
+  "author": "inhwan <wjstk1dnl@gmail.com>",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  },
+  "scripts": {
+    "start": "npm run serve",
+    "serve": "live-server --open=front --port=3000"
+  }
+}
