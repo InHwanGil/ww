@@ -15,9 +15,12 @@
 // function rollingDice(max = 6) {
 //     return Math.floor(Math.random() * max +1);
 // }
+
+//주사위 함수
 function rollingDice(max = 6) {
     return Math.floor(Math.random() * max +1);
 }
+
 const isOdd = (value) => {
     return value % 2 === 1;
 }
@@ -26,11 +29,25 @@ const isEven = (value) => {
 }
 
 let value = rollingDice();
+
 if (isOdd(value)){
     console.log(value, '= 홀수입니다.')
 }else {
     console.log(value, '= 짝수입니다.')
 }
+
+if (isOdd(value)){
+    console.log(value, ' = 홀수입니다.');
+}else {
+    throw new Error(`${value} = 짝수입니다.`);
+}
+
+const throwError = (message) => {
+    throw new Error(message);
+};
+isOdd(value) ?
+    console.log(value, ' = 홀수입니다.') :
+    throwError(`${value} = 짝수입니다.`);
 
 // 굴려서 나온 주사위 값의 홀수인지 여부를 반환하는 함수를 작성하세요.
 // 홀수(odd): 1, 3, 5 → isOdd() // boolean
@@ -100,16 +117,23 @@ if (isOdd(value)){
 //   // ES6 (2015) template literal
 //   throw new Error(`${value} = 짝수입니다.`);
 // }
+// if (isOdd(value)){
+//     console.log(value, ' = 홀수입니다.');
+// }else {
+//     console.error(value + ' = 짝수입니다.');
+// }
+// const throwError = (message) => {
+//     throw new Error(message);
+// };
+
+// isOdd(value) ? console.log(value, ' = 홀수입니다.') : console.log(value, ' = 짝수입니다.')
 
 
-const throwError = (message) => {
-    throw new Error(message);
-};
 
 // 조건() ? 참인경우 실행() : 거짓인경우 실행()
-isOdd(value) ?
-    console.log(value, ' = 홀수입니다.') :
-    console.log(value, ' = 짝수입니다.')
+// isOdd(value) ?
+//     console.log(value, ' = 홀수입니다.') :
+//     console.log(value, ' = 짝수입니다.')
     // throwError(`${value} = 짝수입니다.`);
 
 
@@ -121,34 +145,44 @@ isOdd(value) ?
 // - "남성 원샷"
 // - "다 같이 원샷"
 // - "나 빼고 원샷"
-
 function displayPanerty(value) {
-    switch(Number(value)) {
-        // switch(+value) {
-        case 1:
-            return "1잔 원샷";
-        case 2: return "지목 원샷";
-        case 3: return "여성 원샷";
-        case 4: return "남성 원샷";
-        case 5: return "다 같이 원샷";
-        case 6: return "나 빼고 원샷";
-        // default:
-        //     throwError('6을 초과하는 혹은 1 미만의 숫자가 전달되었습니다.');
+    switch (Number(value)) {
+        case 1: return '한잔 원샷';
+        case 2: return '두잔 원샷';
+        case 3: return '세잔 원샷';
+        case 4: return '네잔 원샷';
+        case 5: return '다잔 원샷';
+        case 6: return '여잔 원샷';
     }
-
-    // return 멀티 조건(3항식 활용)에 따라 값을 반환;
-    // return value === 1 ?
-    //   "1잔 원샷" :
-    //   value === 2 ?
-    //     "지목 원샷" :
-    //     value === 3 ?
-    //       "여성 원샷" :
-    //     value === 4 ?
-    //       "남성 원샷" :
-    //     value === 5 ?
-    //       "다 같이 원샷" :
-    //       "나 빼고 원샷";
 }
+
+// function displayPanerty(value) {
+//     switch(Number(value)) {
+//         // switch(+value) {
+//         case 1:
+//             return "1잔 원샷";
+//         case 2: return "지목 원샷";
+//         case 3: return "여성 원샷";
+//         case 4: return "남성 원샷";
+//         case 5: return "다 같이 원샷";
+//         case 6: return "나 빼고 원샷";
+//         // default:
+//         //     throwError('6을 초과하는 혹은 1 미만의 숫자가 전달되었습니다.');
+//     }
+//
+//     // return 멀티 조건(3항식 활용)에 따라 값을 반환;
+//     // return value === 1 ?
+//     //   "1잔 원샷" :
+//     //   value === 2 ?
+//     //     "지목 원샷" :
+//     //     value === 3 ?
+//     //       "여성 원샷" :
+//     //     value === 4 ?
+//     //       "남성 원샷" :
+//     //     value === 5 ?
+//     //       "다 같이 원샷" :
+//     //       "나 빼고 원샷";
+// }
 
 
 // 코드 리팩터링(refactoring)

@@ -9,6 +9,6 @@
   },
   "scripts": {
     "start": "npm run serve",
-    "serve": "live-server --open=front --port=3000"
+    "serve": "live-server --open=client --port=3000"
   }
 }
