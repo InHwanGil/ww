@@ -16,7 +16,7 @@
 //     return Math.floor(Math.random() * max +1);
 // }
 
-//주사위 함수
+//------------------------------------------------//
 function rollingDice(max = 6) {
     return Math.floor(Math.random() * max +1);
 }
@@ -48,6 +48,32 @@ const throwError = (message) => {
 isOdd(value) ?
     console.log(value, ' = 홀수입니다.') :
     throwError(`${value} = 짝수입니다.`);
+
+// function displayPanerty(value) {
+//     switch (Number(value)) {
+//         case 1: return '한잔 원샷';
+//         case 2: return '두잔 원샷';
+//         case 3: return '세잔 원샷';
+//         case 4: return '네잔 원샷';
+//         case 5: return '다잔 원샷';
+//         case 6: return '여잔 원샷';
+//     }
+// }
+function displayPanerty(value) {
+    switch (Number(value)) {
+        case 1: return '한잔';
+        case 2: return '두잔';
+        case 3: return '삼잔';
+        case 4: return '사잔';
+        case 5: return '오잔';
+        case 6: return '육잔';
+        default: throwError('넣을 수 없는 수를 넣고 계십니다. 1부터 6까지만 작성해주세요.')
+    }
+}
+// console.log(displayPanerty(rollingDice()));
+
+
+//------------------------------------------------//
 
 // 굴려서 나온 주사위 값의 홀수인지 여부를 반환하는 함수를 작성하세요.
 // 홀수(odd): 1, 3, 5 → isOdd() // boolean
@@ -145,16 +171,17 @@ isOdd(value) ?
 // - "남성 원샷"
 // - "다 같이 원샷"
 // - "나 빼고 원샷"
-function displayPanerty(value) {
-    switch (Number(value)) {
-        case 1: return '한잔 원샷';
-        case 2: return '두잔 원샷';
-        case 3: return '세잔 원샷';
-        case 4: return '네잔 원샷';
-        case 5: return '다잔 원샷';
-        case 6: return '여잔 원샷';
-    }
-}
+// function displayPanerty(value) {
+//     switch (Number(value)) {
+//         case 1: return '한잔';
+//         case 2: return '두잔';
+//         case 3: return '삼잔';
+//         case 4: return '사잔';
+//         case 5: return '오잔';
+//         case 6: return '육잔';
+//         default: throwError('넣을 수 없는 수를 넣고 계십니다. 1부터 6까지만 작성해주세요.')
+//     }
+// }
 
 // function displayPanerty(value) {
 //     switch(Number(value)) {
