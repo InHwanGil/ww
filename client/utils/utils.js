@@ -68,9 +68,10 @@ function getNodeList(selector, context = document) {
 function getNode(selector, context = document) {
     return getNodeList(selector, context)[0];
 }
-
 const $$ = getNodeList;
 const $ = getNode;
+
+
 
 // - getAttr()
 // - setAttr()
@@ -88,18 +89,72 @@ function attr(node, attrName, value) {
     return !value ? getAttr(node, attrName) : setAttr(node, attrName, value);
 }
 
-function getData(node, dataName) {
-    return node.dataset.dataName;
+function getData(node, attrName) {
+    return getAttr(node, attrName);
 }
 
+
+console.log(getData($('li > a'), 'data-name'));
+
+
+function setData(node, attrName, value) {
+    setAttr(node, attrName, value)
+}
+// setData($('li > a'),'data-name','list')
+const elem = $('li > a')
 // - getData()
 // - setData()
 // - data()
+
+
+function addClass(node, attrName, value) {
+    // setAttr(node, attrName, value);
+    node.classList.add(value);
+}
+
+function removeClass(node, attrName, value) {
+    // setAttr(node, attrName, value);
+    node.classList.remove(value);
+}
+
+function toggleClass(node, attrName, value) {
+    // setAttr(node, attrName, value);
+    node.classList.toggle(value);
+}
+
+function hasClass(node, attrName, value) {
+    // setAttr(node, attrName, value);
+    node.classList.contains(value);
+}
 
 // - addClass()
 // - removeClass()
 // - hasClass()
 // - toggleClass()
+
+
+function getStyle(node,styleName) {
+    // return node.style
+   if (!styleName || styleName === ''){
+       throwError(`해당 ${styleName}스타일은 적용되어있지 않습니다.`)
+   }
+   return node.style.getPropertyValue(styleName)
+}
+
+// console.log(getStyle(elem, 'color'));
+
+function setStyle(node,styleName,value) {
+
+    node.style.setProperty(styleName,value)
+
+}
+// setStyle(elem,'color','orange')
+
+function css(node, styleName, value) {
+    return !value ? getStyle(node,styleName) : setStyle(node,styleName,value);
+}
+
+css(elem, 'color', 'orange')
 
 // - getStyle()
 // - setStyle()
